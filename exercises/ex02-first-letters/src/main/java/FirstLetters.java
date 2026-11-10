@@ -28,11 +28,11 @@ public class FirstLetters {
         // TODO: complete
         //return "";
         String firstLetters = "";
-        for (i = 0; i < words.length(); i++) {
+        for (int i = 0; i < words.length(); i++) {
             if (i == 0) {
                 firstLetters += words.charAt(i);
         }
-            if (i > 0) && words.charAt(i-1) == ' ') {
+            if (i > 0 && words.charAt(i-1) == ' ') {
                 firstLetters += words.charAt(i);
             }
     }
