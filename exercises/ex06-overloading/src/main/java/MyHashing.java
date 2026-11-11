@@ -29,6 +29,7 @@ public class MyHashing {
    */
   public MyHashing(int seed) {
     // TODO: store the parameter in this object's seed field.
+    this.seed = seed;
   }
 
   /**
@@ -39,7 +40,10 @@ public class MyHashing {
    */
   public int hash(int value) {
     // TODO
-    return 0;
+    // return 0;
+    int oldSeed = seed;
+    seed = value;
+    return oldSeed;
   }
 
   /**
@@ -52,8 +56,11 @@ public class MyHashing {
    */
   public int hash(char value) {
     // TODO
-    return 0;
-  }
+    // return 0;
+      int result = (seed + value) % MODULO;
+      seed = value;
+      return result;
+    }
 
   /**
    * Returns the sum of the numeric codes of the characters in {@code value}.
@@ -65,6 +72,11 @@ public class MyHashing {
    */
   public static int hash(String value) {
     // TODO: String.toCharArray() may help.
-    return 0;
+    // return 0;
+    int sum = 0;
+    for (char c : value.toCharArray()) {
+      sum += c;
+    }
+    return sum;
   }
 }
